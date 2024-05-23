@@ -80,6 +80,18 @@
 				"Mac",
 				"Linux"
 			]
+		},
+		{
+			"Name": "SnapdragonSpaces",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"Android",
+				"Win64"
+			]
+		},
+		{
+			"Name": "SnapdragonSpacesSamples",
+			"Enabled": true
 		}
 	]
 }
