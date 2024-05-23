@@ -15,7 +15,8 @@ public class XRSimulation : ModuleRules
 				"CoreUObject",
 				"Engine",
 				"HeadMountedDisplay",
-				"InputCore"
+				"InputCore",
+				"XRBase",
 			}
 		);
 

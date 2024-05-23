@@ -81,7 +81,10 @@ void UUxtDefaultHandTrackerSubsystem::OnGameModePostLogin(AGameModeBase* GameMod
 		// data.
 		TickDelegateHandle = FWorldDelegates::OnWorldPreActorTick.AddUObject(this, &UUxtDefaultHandTrackerSubsystem::OnWorldPreActorTick);
 
-		IModularFeatures::Get().RegisterModularFeature(IUxtHandTracker::GetModularFeatureName(), &DefaultHandTracker);
+#if WITH_EDITOR
+		//IModularFeatures::Get().RegisterModularFeature(IUxtHandTracker::GetModularFeatureName(), &DefaultHandTracker);
+#endif
+
 	}
 }
 

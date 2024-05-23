@@ -267,6 +267,9 @@ void AUxtHandInteractionActor::Tick(float DeltaTime)
 	bNewNearPointerActive &= bNearInteractionFlag;
 	bNewFarPointerActive &= bFarInteractionFlag;
 
+	UE_LOG(LogTemp, Warning, TEXT("bNewNearPointerActive: %s"), (bNewNearPointerActive ? TEXT("true") : TEXT("false")));
+	UE_LOG(LogTemp, Warning, TEXT("bNewFarPointerActive: %s"), (bNewFarPointerActive ? TEXT("true") : TEXT("false")));
+
 	// Update pointer active state
 	if (bNewNearPointerActive != NearPointer->IsActive())
 	{

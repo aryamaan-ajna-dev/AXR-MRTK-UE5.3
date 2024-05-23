@@ -57,7 +57,6 @@ void UUxtFarPointerComponent::TickComponent(float DeltaTime, ELevelTick TickType
 			SetPressed(bNewPressed);
 		}
 	}
-
 	SetEnabled(bIsTracked);
 }
 
