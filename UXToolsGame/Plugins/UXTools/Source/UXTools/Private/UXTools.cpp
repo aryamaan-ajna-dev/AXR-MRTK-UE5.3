@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 #include "UXTools.h"
+//#include "UxtDeveloperSettings.h"
 
 DEFINE_LOG_CATEGORY(UXTools)
 
@@ -9,6 +10,7 @@ DEFINE_LOG_CATEGORY(UXTools)
 
 void FUXToolsModule::StartupModule()
 {
+	//IModularFeatures::Get().RegisterModularFeature(TEXT("AjnaXRSettings"), &UUxtDeveloperSettings::StaticClass()->GetDefaultObject<UUxtDeveloperSettings>());
 }
 
 void FUXToolsModule::ShutdownModule()

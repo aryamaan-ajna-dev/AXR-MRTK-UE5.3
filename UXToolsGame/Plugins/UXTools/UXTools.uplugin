@@ -49,7 +49,7 @@
 			"Type": "Runtime",
 			"LoadingPhase": "PostConfigInit",
 			"WhitelistPlatforms": [
-				"Win64",
+				"Win64"
 			]
 		},
 		{

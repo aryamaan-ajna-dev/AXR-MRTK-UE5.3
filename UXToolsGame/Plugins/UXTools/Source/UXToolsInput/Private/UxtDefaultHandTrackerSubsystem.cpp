@@ -18,6 +18,7 @@
 #include "GameFramework/PlayerController.h"
 #include "Kismet/GameplayStatics.h"
 #include "Utils/UxtFunctionLibrary.h"
+#include "Utils/UxtDeveloperSettings.h"
 
 void UUxtDefaultHandTrackerSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 {
@@ -81,8 +82,18 @@ void UUxtDefaultHandTrackerSubsystem::OnGameModePostLogin(AGameModeBase* GameMod
 		// data.
 		TickDelegateHandle = FWorldDelegates::OnWorldPreActorTick.AddUObject(this, &UUxtDefaultHandTrackerSubsystem::OnWorldPreActorTick);
 
-		IModularFeatures::Get().RegisterModularFeature(IUxtHandTracker::GetModularFeatureName(), &DefaultHandTracker);
+		UUxtDeveloperSettings* devSettings = GetMutableDefault<UUxtDeveloperSettings>();
 
+		if (devSettings->bEnableForAjnaXR)
+		{
+#if WITH_EDITOR
+			IModularFeatures::Get().RegisterModularFeature(IUxtHandTracker::GetModularFeatureName(), &DefaultHandTracker);
+#endif
+		}
+		else
+		{
+			IModularFeatures::Get().RegisterModularFeature(IUxtHandTracker::GetModularFeatureName(), &DefaultHandTracker);
+		}
 	}
 }
 
